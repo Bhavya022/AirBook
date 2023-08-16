@@ -24,6 +24,17 @@ const authController={
         catch(error){
             res.status(500).json({error:'An error occured'})
         }
+    }, 
+    getalluser:async(req,res)=>{
+        try{
+     const user = await User.find()  
+     console.log(user) 
+     res.status(200).send(user) 
+        } 
+        catch(error){ 
+            console.log(error)
+            res.status(500).json({error:'An error occured'})
+        }
     },
     login:async(req,res)=>{
         try{
